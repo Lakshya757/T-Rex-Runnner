@@ -1,6 +1,3 @@
-var touches=[]
-
-
 var PLAY = 1;
 var END = 0;
 var gameState = PLAY;
@@ -65,7 +62,7 @@ function setup() {
   gameOver.scale = 0.5;
   restart.scale = 0.5;
   
-  invisibleGround = createSprite(200,190,400,10);
+  invisibleGround = createSprite(width/2,lentgh/3,400,10);
   invisibleGround.visible = false;
   
   //create Obstacle and Cloud Groups
@@ -114,6 +111,7 @@ function draw() {
     if((keyDown("space") || (touches.length>0) && trex.y >= 100)) {
         trex.velocityY = -12;
         jumpSound.play();
+      touches=[];
     }
     
     
